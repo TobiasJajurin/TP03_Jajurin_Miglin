@@ -4,9 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        int opccion, dni, tipoEntrada, cantidad;
+        int opccion, dni, tipoEntrada, cantidad, clientesInscriptos = 0;
         string apellido, nombre;
+        double abono=0;
         DateTime fecha;
+        cliente cliente;
 
         opccion = ingresarOpccion("Ingrese la opccion que desea");
         while (opccion != 5)
@@ -20,10 +22,13 @@ class Program
                 tipoEntrada = IngresarEntrada  ("Ingrese su tipo de entrada");
                 fecha = IngresarFecha ("Ingrese su fecha");
                 cantidad = IngresarCantidad ("Ingrese su cantidad");
-
+                cliente = new cliente(dni, apellido, nombre, tipoEntrada, fecha, cantidad);
+                clientesInscriptos ++;
+                guardarImporte(tipoEntrada,cantidad,abono);
                 break;
 
                 case 2:
+                Console.WriteLine("Hay " + clientesInscriptos + " clientes inscriptos");
                 break;
 
                 case 3:
@@ -93,6 +98,29 @@ class Program
             
         } while (cant <0);
         return cant;
+    }
+    public static void guardarImporte(int tipoEntrada, int cantidad, double abono)
+    {    
+        switch (tipoEntrada)
+        {
+            case 1:
+            abono = 45000 * cantidad;
+            break;
+
+            case 2:
+            abono = 60000 * cantidad;
+            break;
+
+            case 3:
+            abono = 30000 * cantidad;
+            break;
+
+            case 4:
+            abono = 100000 * cantidad;
+            break;
+            
+        }
+        
     }
     
 }

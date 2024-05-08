@@ -16,7 +16,6 @@ class cliente
         TIPOENTRADA = tipoEntrada;
         CANTIDAD = cantidad;
 
-
     }
 
 
