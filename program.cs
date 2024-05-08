@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        int opccion, dni, tipoEntrada;
+        int opccion, dni, tipoEntrada, cantidad;
         string apellido, nombre;
         DateTime fecha;
 
@@ -18,7 +18,9 @@ class Program
                 apellido = IngresarString ("Ingrese su apellido");
                 nombre = IngresarString ("Ingrese su nombre");
                 tipoEntrada = IngresarEntrada  ("Ingrese su tipo de entrada");
-                
+                fecha = IngresarFecha ("Ingrese su fecha");
+                cantidad = IngresarCantidad ("Ingrese su cantidad");
+
                 break;
 
                 case 2:
@@ -71,7 +73,7 @@ class Program
         } while (entrada != 1 && entrada != 2 && entrada != 3 && entrada != 4 );
         return entrada;
     }
-    public DateTime IngresarFecha (string m)
+    public static DateTime IngresarFecha (string m)
 
     {
         DateTime a;
@@ -80,6 +82,17 @@ class Program
 
         a = DateTime.Parse(Console.ReadLine());
         return a;
+    }
+    public static int IngresarCantidad (string m)
+    {
+        int cant;
+        do
+        {
+            Console.WriteLine(m);
+            cant = int.Parse(Console.ReadLine());
+            
+        } while (cant <0);
+        return cant;
     }
     
 }
