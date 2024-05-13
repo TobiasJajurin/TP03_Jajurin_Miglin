@@ -21,7 +21,7 @@ class Program
                 nombre = IngresarString ("Ingrese su nombre");
                 tipoEntrada = IngresarEntrada  ("Ingrese su tipo de entrada");
                 fecha = IngresarFecha ("Ingrese su fecha");
-                cantidad = IngresarCantidad ("Ingrese su cantidad");
+                cantidad = IngresarNatural ("Ingrese su cantidad");
                 cliente = new cliente(dni, apellido, nombre, tipoEntrada, fecha, cantidad);
                 clientesInscriptos ++;
                 abono = ticketera.guardarImporte (tipoEntrada,cantidad);
@@ -32,9 +32,20 @@ class Program
                 break;
 
                 case 3:
+                int idBusqueda;
+                idBusqueda = IngresarNatural("Ingrese su id");
+                ticketera.buscarCliente (idBusqueda);
                 break;
 
                 case 4:
+                 int idCambio, entradaCambio, cantidadCambio;
+                 DateTime fechaCambio;
+            
+                idCambio = IngresarNatural ("Ingrese su id");
+                entradaCambio = IngresarEntrada ("Ingrese su nueva entrada");
+                fechaCambio = IngresarFecha ("Ingrese su nueva fecha");
+                cantidadCambio = IngresarNatural ("Ingrese su nueva cantidad");
+                ticketera.CambiarEntrada (idCambio, entradaCambio, fechaCambio, cantidadCambio, abono);
                 break;
                 
             }
@@ -88,17 +99,19 @@ class Program
         a = DateTime.Parse(Console.ReadLine());
         return a;
     }
-    public static int IngresarCantidad (string m)
+   
+  
+    public static int IngresarNatural(string m)
     {
-        int cant;
+        int n;
         do
         {
-            Console.WriteLine(m);
-            cant = int.Parse(Console.ReadLine());
+        Console.WriteLine(m);
+        n = int.Parse (Console.ReadLine());
             
-        } while (cant <0);
-        return cant;
+        } while (n < 0);
+        return n;
+       
     }
-  
     
 }
