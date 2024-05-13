@@ -14,4 +14,16 @@ public static class ticketera
         dicClientes.Add(devolverUltimoId(UltimoIDEntrada),cliente1);
         return UltimoIDEntrada;
     }
+    public static cliente buscarCliente (int idBuscado)
+    {
+        cliente clienteBuscado = null;
+        if (dicClientes.ContainsKey(idBuscado))
+        {
+            clienteBuscado = dicClientes[idBuscado];
+            
+        }
+          return clienteBuscado;
+
+    }
+    
 }

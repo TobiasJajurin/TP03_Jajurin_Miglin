@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tp03_Jajurin_Miglin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1935076333d0a671bf4e2ec2510a53b69eafbe2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1dd78e8ba8c3dd0f30036b96b71ee3ad81112bab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tp03_Jajurin_Miglin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tp03_Jajurin_Miglin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
