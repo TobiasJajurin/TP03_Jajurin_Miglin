@@ -34,7 +34,7 @@ class Program
                 break;
 
                 case 2:
-                ticketera.EstadisticasTicketera (clientesInscriptos, cantidadesEntradas, calculosRecaudacion);
+                ticketera.EstadisticasTicketera ();
                 
                 
 
@@ -48,14 +48,20 @@ class Program
                 break;
 
                 case 4:
-                 int idCambio, entradaCambio, cantidadCambio;
-                 DateTime fechaCambio;
+                int idCambio, entradaCambio, cantidadCambio, apoyo;
+                DateTime fechaCambio;
+                bool h;
             
                 idCambio = IngresarNatural ("Ingrese su id");
                 entradaCambio = IngresarEntrada ("Ingrese su nueva entrada");
                 fechaCambio = IngresarFecha ("Ingrese su nueva fecha");
                 cantidadCambio = IngresarNatural ("Ingrese su nueva cantidad");
-                ticketera.CambiarEntrada (idCambio, entradaCambio, fechaCambio, cantidadCambio, abono);
+                h = ticketera.CambiarEntrada (idCambio, entradaCambio, fechaCambio, cantidadCambio, abono);
+                
+             
+
+
+                Console.WriteLine(h);
                 break;
                 
             }
