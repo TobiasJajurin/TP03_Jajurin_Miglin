@@ -24,7 +24,7 @@ class Program
                 cantidad = IngresarCantidad ("Ingrese su cantidad");
                 cliente = new cliente(dni, apellido, nombre, tipoEntrada, fecha, cantidad);
                 clientesInscriptos ++;
-                guardarImporte(tipoEntrada,cantidad,abono);
+                abono = ticketera.guardarImporte (tipoEntrada,cantidad);
                 break;
 
                 case 2:
@@ -99,28 +99,6 @@ class Program
         } while (cant <0);
         return cant;
     }
-    public static void guardarImporte(int tipoEntrada, int cantidad, double abono)
-    {    
-        switch (tipoEntrada)
-        {
-            case 1:
-            abono = 45000 * cantidad;
-            break;
-
-            case 2:
-            abono = 60000 * cantidad;
-            break;
-
-            case 3:
-            abono = 30000 * cantidad;
-            break;
-
-            case 4:
-            abono = 100000 * cantidad;
-            break;
-            
-        }
-        
-    }
+  
     
 }
