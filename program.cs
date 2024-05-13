@@ -4,7 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        int opccion, dni, tipoEntrada, cantidad, clientesInscriptos = 0;
+        int opccion, dni, tipoEntrada , cantidad, clientesInscriptos = 0;
+        int[] cantidadesEntradas = new int [4];
+        int[] calculosRecaudacion = new int [4];
+
         string apellido, nombre;
         double abono=0;
         DateTime fecha;
@@ -25,10 +28,17 @@ class Program
                 cliente = new cliente(dni, apellido, nombre, tipoEntrada, fecha, cantidad);
                 clientesInscriptos ++;
                 abono = ticketera.guardarImporte (tipoEntrada,cantidad);
+              
+                cantidadesEntradas = ticketera.calcularEntradas(tipoEntrada, cantidad);
+                calculosRecaudacion = ticketera.calcularRecaudacion(cantidadesEntradas);
                 break;
 
                 case 2:
-                Console.WriteLine("Hay " + clientesInscriptos + " clientes inscriptos");
+                ticketera.EstadisticasTicketera (clientesInscriptos, cantidadesEntradas, calculosRecaudacion);
+                
+                
+
+
                 break;
 
                 case 3:
@@ -113,5 +123,6 @@ class Program
         return n;
        
     }
-    
+   
+
 }
